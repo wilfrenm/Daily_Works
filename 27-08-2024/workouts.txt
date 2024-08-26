@@ -1,0 +1,16 @@
+<?php  
+  mkdir('test');
+	$v2=fopen("new 1.txt","r");
+	$read = fread($v2,filesize("new 1.txt"));
+	echo $read."<br>";
+	$content = "Hello this is a sample program";
+	file_put_contents('./File Handling/content.txt',$content,FILE_APPEND);
+	echo file_exists("new 1.txt")."<br>";
+	echo is_dir('test');
+	copy("new 1.txt","rsr.txt");
+	unlink("rsr.txt");
+	echo filetype("new 1.txt");
+	echo filetype("test");
+	sleep(1);
+	echo "After sleep";
+ ?>
