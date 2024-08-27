@@ -1,5 +1,5 @@
 <?php  
-  mkdir('test');
+  	mkdir('test');
 	$v2=fopen("new 1.txt","r");
 	$read = fread($v2,filesize("new 1.txt"));
 	echo $read."<br>";
@@ -8,9 +8,20 @@
 	echo file_exists("new 1.txt")."<br>";
 	echo is_dir('test');
 	copy("new 1.txt","rsr.txt");
-	unlink("rsr.txt");
+	$arr = scandir("../26-08/test",SCANDIR_SORT_DESCENDING);
+	print_r($arr);
+	$open = fopen("ldf2.txt","a+");
+	
+	fwrite($open,"hello");
+	$read = fread($open , filesize("ldf2.txt"));
+	echo $read;
+	fclose($open);
+	unlink("ldf2.txt");
 	echo filetype("new 1.txt");
 	echo filetype("test");
+	die;
 	sleep(1);
 	echo "After sleep";
+	die;
+	
  ?>
